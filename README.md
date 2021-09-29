@@ -1,7 +1,6 @@
 # Description
 
-A fast SSH mass-scanner, login cracker and banner grabber tool using the
-python-masscan and shodan module.
+A fast SSH mass-scanner and banner grabber tool.
 
 # Usage
 
