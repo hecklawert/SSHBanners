@@ -72,9 +72,14 @@ def scanNetwork():
 def checkHost(host, q):
     print(host)
     if isSshOpen(host):
-        c_banner = getBanner(host, '22')
-        if c_banner:
-            saveBanner(c_banner,host)
+        try:
+            c_banner = getBanner(host, '22')
+            if c_banner:
+                saveBanner(c_banner,host)
+        except:
+            logging.error('Error on thread') 
+            q.get()
+            q.task_done()
     q.get()
     q.task_done()
 
